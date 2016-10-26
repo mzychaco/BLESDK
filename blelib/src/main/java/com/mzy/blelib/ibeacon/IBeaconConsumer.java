@@ -3,7 +3,7 @@ package com.mzy.blelib.ibeacon;
 import java.util.List;
 
 /**
- * Created by wanglei on 3/20/16.
+ * Created by mozhenyong on 3/20/16.
  * LBeacon信号的消费者，需要调用LBeaconManager.bind方法绑定。绑定后，每次LBeaconManager检测到蓝牙信号，会回调onLBeaconDetect方法。
  */
 public interface IBeaconConsumer {

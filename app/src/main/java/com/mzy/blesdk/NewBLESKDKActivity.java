@@ -30,8 +30,6 @@ public class NewBLESKDKActivity extends Activity implements IBeaconConsumer {
         super.onCreate(savedInstanceState);
         LinearLayout ll=new LinearLayout(this);
         LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        ListView listView=new ListView(this);
-//        ll.addView(listView,lp);
         TextView tv=new TextView(this);
         tv.setText("dafasdfas");
         ll.addView(tv,lp);
@@ -92,21 +90,6 @@ public class NewBLESKDKActivity extends Activity implements IBeaconConsumer {
     }
 }
 
-class myAdapter extends SchoBaseAdapter<IBeacon>{
 
-    public myAdapter(Context context) {
-        super(context);
-    }
-
-    @Override
-    public void setData(List<IBeacon> list) {
-
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
-    }
-}
 
 

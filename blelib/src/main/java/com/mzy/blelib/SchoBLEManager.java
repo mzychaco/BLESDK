@@ -123,44 +123,16 @@ public class SchoBLEManager {
                 case BLEService.UNDER_18:
                     SchoBLEManager.BLE_SUPPORTED_STATUS = IBeaconError.BUILD_VERSION_TOO_LOW;
                     Log.e("SchoBLEManager", "android build version is too low ");
-//                        if(BRTBeaconManager.this.mBeaconManagerListener != null) {
-//                            BRTBeaconManager.this.mBeaconManagerListener.onError(new BRTThrowable("蓝牙未打开", -2));
-//                        }
                     break;
                 case BLEService.NOT_SUPPORT:
                     SchoBLEManager.BLE_SUPPORTED_STATUS = IBeaconError.NOT_SUPPORTED;
                     Log.e("BRTBeaconManager", "Ble not supported by this device ");
-//                        if(BRTBeaconManager.this.mBeaconManagerListener != null) {
-//                            BRTBeaconManager.this.mBeaconManagerListener.onError(new BRTThrowable("该设备不支持BLE", -1));
-//                        }
                     break;
                 case BLEService.UNOPEN:
                     SchoBLEManager.BLE_SUPPORTED_STATUS = IBeaconError.NOT_OPENED;
                     Log.e("BRTBeaconManager", "bluetooth is not opened ");
                     break;
-                /*case BLEService.:
-                    if(action.equals("com.brtbeaconsdk.sdk.ble.device_found")) {
-                        Bundle extras = intent.getExtras();
-                        BluetoothDevice device = (BluetoothDevice)extras.getParcelable("DEVICE");
-                        BRTBeacon beacon = Utils.beaconFromLeScan(device, extras.getInt("RSSI"), extras.getByteArray("SCAN_RECORD"));
-                        if(beacon != null) {
-                            if(BRTBeaconManager.this.brtRegion != null && !Utils.isBeaconInRegion(beacon, BRTBeaconManager.this.brtRegion)) {
-                                return;
-                            }
 
-                            if(BRTBeaconManager.this.enableBBeacon && !beacon.isBrightBeacon()) {
-                                return;
-                            }
-
-                            long now = System.currentTimeMillis();
-                            beacon.setMillsTime(now);
-                            if(!BRTBeaconManager.this.beaconsFoundInScanCycle.containsKey(beacon.getMacAddress()) && BRTBeaconManager.this.mBeaconManagerListener != null) {
-                                BRTBeaconManager.this.mBeaconManagerListener.onNewBeacon(beacon);
-                            }
-
-                            BRTBeaconManager.this.beaconsFoundInScanCycle.put(beacon.getMacAddress(), beacon);
-                        }
-                    }*/
             }
 
         }
@@ -364,18 +336,6 @@ public class SchoBLEManager {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-//            if(BRTBeaconManager.this.mService != null) {
-//                BRTBeaconManager.this.mBle = BRTBeaconManager.this.mService.getBle();
-//            }
-//
-//            if(BRTBeaconManager.this.mBle != null && !BRTBeaconManager.this.mBle.adapterEnabled()) {
-//                if(BRTBeaconManager.this.mBeaconManagerListener != null) {
-//                    BRTBeaconManager.this.mBeaconManagerListener.onError(new BRTThrowable("蓝牙未打开，请检查设备蓝牙是否开启", -1));
-//                }
-//
-//                L.e("蓝牙未开启");
-//            }
 
         }
 

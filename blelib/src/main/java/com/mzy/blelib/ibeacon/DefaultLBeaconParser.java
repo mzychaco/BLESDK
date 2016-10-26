@@ -3,7 +3,6 @@ package com.mzy.blelib.ibeacon;
 import android.bluetooth.BluetoothDevice;
 
 /**
- * Created by wanglei on 6/24/16.
  * 默认的蓝牙信号解析器。
  */
 public class DefaultLBeaconParser implements IBeaconParser {

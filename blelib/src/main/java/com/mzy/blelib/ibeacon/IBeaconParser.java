@@ -3,7 +3,7 @@ package com.mzy.blelib.ibeacon;
 import android.bluetooth.BluetoothDevice;
 
 /**
- * Created by wanglei on 4/24/16.
+ * Created by mozhenyong on 4/24/16.
  * 蓝牙信号解析接口，在LBeaconManager可以改变默认的信号解析处理。
  */
 public interface IBeaconParser {

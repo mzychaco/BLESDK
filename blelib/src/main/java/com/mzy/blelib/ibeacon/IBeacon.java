@@ -3,7 +3,7 @@ package com.mzy.blelib.ibeacon;
 import java.math.BigDecimal;
 
 /**
- * Created by wanglei on 2/20/16.
+ * Created by mozhenyong on 2/20/16.
  * iBeacon蓝牙信号解析后的对象。
  */
 public class IBeacon implements Comparable<IBeacon> {

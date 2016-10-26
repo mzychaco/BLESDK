@@ -31,15 +31,11 @@ public class BLEService extends Service {
     public void onCreate() {
         super.onCreate();
         if (Build.VERSION.SDK_INT < 18) {
-            // throw new RuntimeException("Bluetooth LE not supported by this device");
-            //... deal with the case of unsupported devices
             this.sendBroadcast(new Intent(UNDER_18));
             mBluetoothAdapter=null;
             return;
         }
         if (!this.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
-            //throw new RuntimeException("Bluetooth LE not supported by this device");
-            //... deal with the case of unsupported devices
             this.sendBroadcast(new Intent(NOT_SUPPORT));
             mBluetoothAdapter=null;
         }
@@ -68,18 +64,6 @@ public class BLEService extends Service {
         intentFilter.addAction(UNDER_18);
         intentFilter.addAction(NOT_SUPPORT);
         intentFilter.addAction(UNOPEN);
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.not_supported");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.no_bt_adapter");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.status_abnormal");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.request_failed");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.device_found");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.gatt_connected");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.gatt_disconnected");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.service_discovered");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.characteristic_read");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.characteristic_notification");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.characteristic_write");
-//        intentFilter.addAction("com.brtbeaconsdk.sdk.ble.characteristic_changed");
         return intentFilter;
     }
 }
